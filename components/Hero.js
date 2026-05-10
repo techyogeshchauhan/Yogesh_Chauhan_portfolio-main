@@ -50,6 +50,13 @@ function Hero() {
       { value: 'Top 75', label: 'Uttarakhand Emerging Tech Hackathon' }
     ];
 
+    const highlights = [
+      { icon: 'trophy', label: 'Hackathon Winner' },
+      { icon: 'award', label: 'Top 75 State Hackathon' },
+      { icon: 'badge-check', label: 'AWS Data Engineering' },
+      { icon: 'target', label: '97% CV Accuracy' }
+    ];
+
     return (
       <section
         id="home"
@@ -77,6 +84,12 @@ function Hero() {
                 <span className="text-[var(--accent-color)] ml-1 animate-pulse">|</span>
               </div>
 
+              <div className="max-w-[22rem] sm:max-w-2xl mb-5 p-4 rounded-lg border border-[var(--border-color)] bg-[var(--background-card)]">
+                <p className="text-sm sm:text-base text-[var(--text-primary)] font-semibold mb-0">
+                  I build AI systems that connect models, APIs, and real users.
+                </p>
+              </div>
+
               <p className="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed max-w-[22rem] sm:max-w-2xl mb-8">
                 MCA Data Science student building production-minded AI systems across GenAI,
                 Retrieval-Augmented Generation, computer vision, and full-stack web platforms.
@@ -84,7 +97,7 @@ function Hero() {
                 detection model, and a live P2P solar energy trading platform.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3 mb-8 max-w-[22rem] sm:max-w-[36rem]">
+              <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-8 max-w-[22rem] sm:max-w-[42rem]">
                 <button
                   onClick={() => document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })}
                   className="btn-primary"
@@ -99,6 +112,14 @@ function Hero() {
                   <span className="icon-send"></span>
                   Start a Conversation
                 </button>
+                <a
+                  href="/trickle/assets/Yogesh_Chauhan_Resume.pdf"
+                  download="Yogesh_Chauhan_Resume.pdf"
+                  className="btn-secondary"
+                >
+                  <span className="icon-download"></span>
+                  Download Resume
+                </a>
               </div>
 
               <div className="flex flex-wrap gap-3 mb-10 max-w-[22rem] sm:max-w-none">
@@ -164,6 +185,15 @@ function Hero() {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3" data-aos="fade-up" data-aos-delay="180">
+            {highlights.map((item) => (
+              <div key={item.label} className="flex items-center gap-3 p-4 rounded-lg border border-[var(--border-color)] bg-[var(--background-card)]">
+                <span className={`icon-${item.icon} text-[var(--accent-color)] text-xl`}></span>
+                <span className="text-sm sm:text-base font-semibold text-[var(--text-primary)]">{item.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -10,6 +10,7 @@ function Header() {
       { id: 'skills', label: 'Skills', icon: 'code' },
       { id: 'internship', label: 'Experience', icon: 'briefcase' },
       { id: 'projects', label: 'Projects', icon: 'folder' },
+      { id: 'architecture', label: 'Architecture', icon: 'workflow' },
       { id: 'credentials', label: 'Credentials', icon: 'award' }
     ];
 

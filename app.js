@@ -67,6 +67,7 @@ function App() {
         <Skills />
         <Internship />
         <Projects />
+        <Architecture />
         <Credentials />
         <Contact />
         <Footer />

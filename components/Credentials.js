@@ -69,6 +69,13 @@ function Credentials() {
       }
     ];
 
+    const proofItems = [
+      { icon: 'graduation-cap', value: 'MCA', label: 'Data Science specialization' },
+      { icon: 'trophy', value: '1st', label: 'University hackathon rank' },
+      { icon: 'award', value: 'Top 75', label: 'State emerging tech hackathon' },
+      { icon: 'badge-check', value: '8+', label: 'Certifications and badges' }
+    ];
+
     return (
       <section
         id="credentials"
@@ -87,6 +94,16 @@ function Credentials() {
             <p className="section-subtitle">
               Academic foundation and external proof points that support the AI and data science portfolio.
             </p>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-6" data-aos="fade-up">
+            {proofItems.map((item) => (
+              <div key={item.label} className="p-4 rounded-lg border border-[var(--border-color)] bg-[var(--background-card)]">
+                <span className={`icon-${item.icon} text-[var(--accent-color)] text-xl`}></span>
+                <div className="text-2xl font-black text-[var(--text-primary)] mt-3">{item.value}</div>
+                <div className="text-xs sm:text-sm text-[var(--text-secondary)]">{item.label}</div>
+              </div>
+            ))}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-6 mb-6">
@@ -121,6 +138,43 @@ function Credentials() {
                     <p className="text-sm text-[var(--text-secondary)] leading-relaxed mb-0">{item.desc}</p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_0.7fr] gap-6 mb-6">
+            <div className="card" data-aos="fade-up">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="icon-file-down text-2xl text-[var(--accent-color)]"></span>
+                <h3 className="text-xl font-bold text-[var(--text-primary)]">Recruiter Quick Pack</h3>
+              </div>
+              <p className="text-[var(--text-secondary)] leading-relaxed">
+                A concise resume PDF is available directly from the portfolio for internship, project, and collaboration screening.
+              </p>
+              <a
+                href="/trickle/assets/Yogesh_Chauhan_Resume.pdf"
+                download="Yogesh_Chauhan_Resume.pdf"
+                className="btn-primary inline-flex"
+              >
+                <span className="icon-download"></span>
+                Download Resume
+              </a>
+            </div>
+
+            <div className="card" data-aos="fade-up" data-aos-delay="100">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="icon-languages text-2xl text-[var(--accent-secondary)]"></span>
+                <h3 className="text-xl font-bold text-[var(--text-primary)]">Languages</h3>
+              </div>
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-semibold text-[var(--text-primary)]">Hindi</span>
+                  <span className="text-sm text-[var(--text-secondary)]">Native</span>
+                </div>
+                <div className="flex items-center justify-between gap-4">
+                  <span className="font-semibold text-[var(--text-primary)]">English</span>
+                  <span className="text-sm text-[var(--text-secondary)]">Professional</span>
+                </div>
               </div>
             </div>
           </div>

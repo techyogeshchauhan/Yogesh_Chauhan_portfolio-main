@@ -58,6 +58,7 @@ function Footer() {
                   { label: 'Skills', id: 'skills' },
                   { label: 'Experience', id: 'internship' },
                   { label: 'Projects', id: 'projects' },
+                  { label: 'Architecture', id: 'architecture' },
                   { label: 'Credentials', id: 'credentials' },
                   { label: 'Contact', id: 'contact' }
                 ].map((link) => (
