@@ -1,0 +1,646 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Yogesh Chauhan - AI & Data Science Portfolio</title>
+    <meta name="description"
+        content="Yogesh Chauhan's professional portfolio covering GenAI, RAG, Computer Vision, Data Science, full-stack AI products, internships, certifications, and live projects.">
+    <meta name="keywords"
+        content="Yogesh Chauhan, AI Portfolio, Data Science, GenAI, RAG, Computer Vision, YOLOv8, Python, FastAPI, React, Azure AI">
+    <meta name="theme-color" content="#2563EB" id="theme-color">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Theme Color Script -->
+    <script>
+        // Update theme color based on user preference
+        function updateThemeColor() {
+            const isDarkMode = document.documentElement.classList.contains('dark');
+            const themeColorMeta = document.getElementById('theme-color');
+            if (isDarkMode) {
+                themeColorMeta.setAttribute('content', '#0F172A'); // Dark mode color
+            } else {
+                themeColorMeta.setAttribute('content', '#2563EB'); // Light mode color
+            }
+        }
+
+        // Initialize theme color
+        document.addEventListener('DOMContentLoaded', function () {
+            updateThemeColor();
+
+            // Watch for theme changes
+            const observer = new MutationObserver(function (mutations) {
+                mutations.forEach(function (mutation) {
+                    if (mutation.attributeName === 'class') {
+                        updateThemeColor();
+                    }
+                });
+            });
+
+            observer.observe(document.documentElement, { attributes: true });
+        });
+    </script>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://techyogeshchauhan.github.io/Yogesh_Chauhan_portfolio/">
+    <meta property="og:title" content="Yogesh Chauhan - AI & Data Science Portfolio">
+    <meta property="og:description"
+        content="Professional AI and Data Science portfolio featuring GenAI, RAG, Computer Vision, live products, internships, certifications, and hackathon achievements.">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://techyogeshchauhan.github.io/Yogesh_Chauhan_portfolio/">
+    <meta name="twitter:title" content="Yogesh Chauhan - AI & Data Science Portfolio">
+    <meta name="twitter:description"
+        content="Professional AI and Data Science portfolio featuring GenAI, RAG, Computer Vision, live products, internships, certifications, and hackathon achievements.">
+
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react@18/umd/react.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://resource.trickle.so/vendor_lib/unpkg/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://resource.trickle.so/vendor_lib/unpkg/lucide-static@0.516.0/font/lucide.css" rel="stylesheet">
+
+    <!-- Animation Libraries -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- EmailJS for contact form functionality -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            // Initialize EmailJS with your public key
+            emailjs.init("EmyjwMPqNA3YaK6xO");
+        })();
+    </script>
+
+    <!-- Initialize AOS animations -->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                easing: 'ease-in-out',
+                once: true
+            });
+        });
+    </script>
+
+    <!-- Predefined Tailwind CSS, use it as needed, or update base on your -->
+    <style type="text/tailwindcss">
+        @layer theme {
+        :root {
+            /* Color Variables - Light Mode */
+            --primary-color: #ffffff;
+            --accent-color: #2563EB;
+            --accent-secondary: #059669;
+            --accent-tertiary: #D97706;
+            --text-primary: #111827;
+            --text-secondary: #4B5563;
+            --background-dark: #F6F8FB;
+            --background-card: #ffffff;
+            --border-color: #E2E8F0;
+            --chart-color-1: #2563EB;
+            --chart-color-2: #059669;
+            --chart-color-3: #D97706;
+            --chart-color-4: #DC2626;
+            --chart-color-5: #7C3AED;
+            
+            /* Transition for smooth theme switching */
+            --transition-speed: 0.3s;
+            
+            /* Font settings */
+            --font-heading: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-logo: 'Poppins', sans-serif;
+        }
+        
+        .dark {
+            --primary-color: #0B1120;
+            --accent-color: #60A5FA;
+            --accent-secondary: #34D399;
+            --accent-tertiary: #FBBF24;
+            --text-primary: #F9FAFB;
+            --text-secondary: #D1D5DB;
+            --background-dark: #111827;
+            --background-card: #172033;
+            --border-color: #2D3748;
+            --chart-color-1: #60A5FA;
+            --chart-color-2: #34D399;
+            --chart-color-3: #FBBF24;
+            --chart-color-4: #F87171;
+            --chart-color-5: #A78BFA;
+        }
+    }
+
+    @layer base {
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.7;
+            color: var(--text-primary);
+            background: var(--primary-color);
+            min-height: 100vh;
+            transition: background var(--transition-speed) ease, color var(--transition-speed) ease;
+        }
+        
+        /* Enhanced theme transition */
+        * {
+            transition: background-color var(--transition-speed) ease,
+                        color var(--transition-speed) ease,
+                        border-color var(--transition-speed) ease,
+                        box-shadow var(--transition-speed) ease;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: 0;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+        }
+        
+        h2 {
+            font-size: 2.5rem;
+        }
+        
+        h3 {
+            font-size: 1.75rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+        }
+        
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s ease, opacity 0.2s ease;
+        }
+        
+        a:hover {
+            color: var(--accent-secondary);
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        
+        ::selection {
+            background: var(--accent-color);
+            color: white;
+        }
+    }
+
+    @layer components {
+        .btn-primary {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            font-weight: 500;
+            letter-spacing: 0;
+            transition: all 0.2s;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        @media (min-width: 640px) {
+            .btn-primary {
+                padding: 0.75rem 2rem;
+                font-size: 1rem;
+            }
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            opacity: 0.9;
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: rgba(0, 0, 0, 0.1);
+            transition: height 0.3s ease;
+            z-index: -1;
+        }
+        
+        .btn-primary:hover::after {
+            height: 100%;
+        }
+        
+        .btn-secondary {
+            padding: 0.5rem 1.5rem;
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+            font-weight: 500;
+            letter-spacing: 0;
+            transition: all 0.2s;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        
+        @media (min-width: 640px) {
+            .btn-secondary {
+                padding: 0.75rem 2rem;
+                font-size: 1rem;
+            }
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-outline {
+            padding: 0.25rem 1rem;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.2s;
+            border-radius: 0.5rem;
+            font-size: 0.75rem;
+        }
+        
+        @media (min-width: 640px) {
+            .btn-outline {
+                padding: 0.5rem 1.5rem;
+                font-size: 0.875rem;
+            }
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+        
+        .section-padding {
+            padding: 4rem 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .section-padding {
+                padding: 5rem 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding: 6rem 1.5rem;
+            }
+        }
+        
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-transform: none;
+            letter-spacing: 0;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-tertiary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        @media (min-width: 640px) {
+            .section-title {
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .section-title {
+                font-size: 3.75rem;
+            }
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 48rem;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.625;
+        }
+        
+        @media (min-width: 640px) {
+            .section-subtitle {
+                font-size: 1.25rem;
+            }
+        }
+        
+        .card {
+            background-color: var(--background-card);
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            transition: background-color var(--transition-speed), border-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+        }
+        
+        @media (min-width: 640px) {
+            .card {
+                padding: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .card {
+                padding: 2rem;
+            }
+        }
+        
+        .card:hover {
+            border-color: color-mix(in srgb, var(--accent-color) 55%, var(--border-color));
+            box-shadow: 0 14px 30px -24px rgba(15, 23, 42, 0.45);
+        }
+        
+        .data-card {
+            background-color: var(--background-card);
+            padding: 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @media (min-width: 640px) {
+            .data-card {
+                padding: 1.5rem;
+            }
+        }
+        
+        .data-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--accent-color), var(--accent-secondary));
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary-color), var(--background-dark));
+        }
+        
+        .light-header {
+            backdrop-filter: blur(24px);
+            border-bottom: 1px solid var(--border-color);
+            background-color: rgba(255, 255, 255, 0.8);
+            transition: background-color 0.3s ease;
+        }
+        
+        .dark .light-header {
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+        
+        .glass-card {
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            box-shadow: 0 14px 30px -24px rgba(15, 23, 42, 0.45);
+            background-color: rgba(255, 255, 255, 0.82);
+        }
+        
+        .dark .glass-card {
+            background-color: rgba(23, 32, 51, 0.82);
+        }
+        
+        .skill-tag {
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            border-radius: 0.5rem;
+            transition: all 0.2s;
+            background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
+            color: var(--accent-color);
+            border: 1px solid color-mix(in srgb, var(--accent-color) 22%, var(--border-color));
+            font-weight: 600;
+        }
+        
+        @media (min-width: 640px) {
+            .skill-tag {
+                font-size: 0.875rem;
+            }
+        }
+        
+        .skill-tag:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+          .section-padding {
+            padding: 4rem 1rem;
+          }
+          
+          h1 {
+            font-size: 2.5rem !important;
+          }
+          
+          h2 {
+            font-size: 2rem !important;
+          }
+          
+          h3 {
+            font-size: 1.5rem !important;
+          }
+          
+          .card {
+            padding: 1.25rem !important;
+          }
+          
+          .section-title {
+            font-size: 2.25rem !important;
+          }
+        }
+        
+        @media (max-width: 480px) {
+          .section-padding {
+            padding: 3rem 1rem;
+          }
+          
+          h1 {
+            font-size: 2rem !important;
+          }
+          
+          h2 {
+            font-size: 1.75rem !important;
+          }
+          
+          h3 {
+            font-size: 1.25rem !important;
+          }
+          
+          .section-title {
+            font-size: 1.75rem !important;
+          }
+          
+          .text-gradient {
+            background-size: 200% !important;
+          }
+        }
+    }
+
+    @layer utilities {
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-tertiary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 150%;
+        }
+        
+        .data-gradient {
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .animate-pulse-slow {
+            animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .animate-spin-slow {
+            animation: spin 3s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-slide-in-left {
+            animation: slideInLeft 0.8s ease-in-out forwards;
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .animate-slide-in-right {
+            animation: slideInRight 0.8s ease-in-out forwards;
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .animate-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .animate-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        .data-highlight {
+            position: relative;
+        }
+        
+        .data-highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, var(--accent-color), var(--accent-secondary));
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease;
+        }
+        
+        .data-highlight:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    }
+    </style>
+
+    <meta property="og:image" content="https://devproto.trickle.so/storage/app/WX20250722-161315.png">
+    <meta name="twitter:image" content="https://devproto.trickle.so/storage/app/WX20250722-161315.png">
+</head>
+
+<body class="scroll-smooth">
+    <div id="root"></div>
+
+    <script type="text/babel" src="components/Header.js"></script>
+    <script type="text/babel" src="components/Hero.js"></script>
+    <script type="text/babel" src="components/About.js"></script>
+    <script type="text/babel" src="components/Skills.js"></script>
+    <script type="text/babel" src="components/Internship.js"></script>
+    <script type="text/babel" src="components/Projects.js"></script>
+    <script type="text/babel" src="components/Credentials.js"></script>
+    <script type="text/babel" src="components/Contact.js"></script>
+    <script type="text/babel" src="components/Footer.js"></script>
+    <script type="text/babel" src="app.js"></script>
+
+
+
+</body>
+
+</html>
