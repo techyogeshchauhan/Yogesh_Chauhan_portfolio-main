@@ -136,7 +136,7 @@ function Hero() {
               <div className="relative mx-auto max-w-md">
                 <div className="aspect-[4/5] rounded-lg overflow-hidden border border-[var(--border-color)] bg-[var(--background-card)] shadow-xl">
                   <img
-                    src="/trickle/assets/yogu2.jpg"
+                    src="/trickle/assets/yogu2.png"
                     alt="Yogesh Chauhan"
                     className="w-full h-full object-cover"
                   />
